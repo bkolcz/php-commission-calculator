@@ -1,0 +1,20 @@
+{
+    "name": "bkolcz/commission-calculator",
+    "description": "Simple app to demonstrate commission rates calculation",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Bkolcz\\CommissionCalculator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bartłomiej Kołcz",
+            "email": "bkolcz.com@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpunit/phpunit": "^10.3"
+    }
+}

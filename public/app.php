@@ -18,7 +18,6 @@ foreach (explode("\n", file_get_contents($argv[1])) as $row) {
     $isEu = isEu($r->country->alpha2);
 
     $rate = @json_decode(file_get_contents('https://api.exchangeratesapi.io/latest'), true)['rates'][$value[2]];
-    // $rate = @json_decode(file_get_contents(dirname(__FILE__).'/../resources/exchange-rates-response.json'), true)['rates'][$value[2]]; // mock
     if ($value[2] == 'EUR' or $rate == 0) {
         $amntFixed = $value[1];
     }

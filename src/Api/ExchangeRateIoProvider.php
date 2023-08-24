@@ -9,13 +9,14 @@ class ExchangeRateIoProvider implements ExchangeRateProviderInterface
 {
 
     const URL = 'http://api.exchangeratesapi.io';
-    public function __construct(public ?string $accessKey = null)
-    {
+    public function __construct(
+        public ?string $accessKey = null,
+        public $client = new Client()
+    ) {
     }
     public function getExchangeRates(): mixed
     {
-        $client = new Client();
-        $response = $client->get(ExchangeRateIoProvider::URL . '/latest', [
+        $response = $this->client->get(ExchangeRateIoProvider::URL . '/latest', [
             'query' => $this->accessKey === null ? [] : ['access_key' => $this->accessKey]
         ]);
         return ExchangeRateIo::fromJson($response->getBody());

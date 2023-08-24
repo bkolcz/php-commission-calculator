@@ -29,7 +29,6 @@ final class ExchangeRateIoProviderTest extends TestCase {
         $client
             ->expects($this->once())
             ->method('get')
-            // ->with(exchangeRateProvider::URL . '/' . $testArg, ['headers' => ['Accept-Version' => 3]])
             ->willReturn($response);
         $exchangeRateProvider = new ExchangeRateIoProvider('',$client);
         $this->assertInstanceOf(ExchangeRateIo::class, $exchangeRateProvider->getExchangeRates());

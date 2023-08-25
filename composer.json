@@ -1,5 +1,5 @@
 {
-    "name": "bkolcz/commission-calculator",
+    "name": "bkolcz/php-commission-calculator",
     "description": "Simple app to demonstrate commission rates calculation",
     "type": "project",
     "autoload": {
